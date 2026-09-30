@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#111214">
+	<title>72 / Weakness | OSINT Dashboard</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<div class="app-shell">
+		<aside class="sidebar">
+			<a class="brand" href="#dashboard" aria-label="72 / Weakness dashboard">
+				<span class="brand-mark">72</span>
+				<span class="brand-name">/ Weakness</span>
+			</a>
+			<p class="sidebar-label">PUBLIC INTELLIGENCE</p>
+			<nav aria-label="OSINT tools">
+				<ul>
+					<li><a class="nav-link is-active" href="#ip-lookup" aria-current="page"><span class="nav-index">01</span>IP lookup</a></li>
+					<li><a class="nav-link" href="#email-lookup"><span class="nav-index">02</span>Email lookup</a></li>
+					<li><a class="nav-link" href="#username-lookup"><span class="nav-index">03</span>Username lookup</a></li>
+					<li><a class="nav-link" href="#domain-lookup"><span class="nav-index">04</span>Domain / WHOIS</a></li>
+				</ul>
+			</nav>
+			<div class="sidebar-note"><span class="status-dot"></span>Public sources only</div>
+		</aside>
+
+		<main id="dashboard">
+			<header class="page-header">
+				<div>
+					<p class="eyebrow">RESEARCH CONSOLE <span> / </span> 72.01</p>
+					<h1>OSINT dashboard</h1>
+					<p class="header-copy">A focused workspace for publicly available signals.</p>
+				</div>
+				<div class="header-status"><span class="status-dot"></span>OPEN SOURCE MODE</div>
+			</header>
+
+			<section class="workspace" id="ip-lookup" aria-labelledby="ip-title">
+				<div class="section-heading">
+					<div>
+						<p class="eyebrow">TOOL 01 <span> / </span> NETWORK</p>
+						<h2 id="ip-title">IP address lookup</h2>
+					</div>
+					<span class="tool-tag">PUBLIC IPv4</span>
+				</div>
+
+				<div class="lookup-panel">
+					<form id="ip-form" class="lookup-form" novalidate>
+						<label for="ip-address">IPv4 address</label>
+						<div class="input-row">
+							<input id="ip-address" name="ip" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="8.8.8.8" aria-describedby="ip-help ip-error" required>
+							<button type="submit" id="lookup-button"><span>Run lookup</span><span aria-hidden="true">&#8594;</span></button>
+						</div>
+						<p class="field-help" id="ip-help">Public IPv4 addresses only. Private and reserved ranges are blocked.</p>
+						<p class="form-message" id="ip-error" role="alert" hidden></p>
+					</form>
+					<p class="privacy-note"><span aria-hidden="true">i</span> Results are approximate network-level data, not a person’s precise location or identity.</p>
+				</div>
+
+				<section class="results" id="ip-results" aria-labelledby="results-title" aria-live="polite" hidden>
+					<div class="results-heading">
+						<div><p class="eyebrow">LOOKUP RESULT</p><h3 id="results-title">Public network details</h3></div>
+						<span class="result-ip" id="result-ip"></span>
+					</div>
+					<dl class="result-grid" id="result-grid"></dl>
+				</section>
+			</section>
+
+			<section class="tool-list" aria-label="Other public lookup tools">
+				<article class="tool-preview" id="email-lookup">
+					<div class="preview-number">02</div>
+					<div><p class="eyebrow">IDENTITY</p><h2>Email lookup</h2><p>Public domain and mail configuration signals only.</p></div>
+					<span class="coming-soon">IN QUEUE</span>
+				</article>
+				<article class="tool-preview" id="username-lookup">
+					<div class="preview-number">03</div>
+					<div><p class="eyebrow">SOCIAL</p><h2>Username lookup</h2><p>Public profiles on Discord, Roblox, GitHub, and Reddit.</p></div>
+					<span class="coming-soon">IN QUEUE</span>
+				</article>
+				<article class="tool-preview" id="domain-lookup">
+					<div class="preview-number">04</div>
+					<div><p class="eyebrow">INFRASTRUCTURE</p><h2>Domain / WHOIS</h2><p>Public DNS and registration records.</p></div>
+					<span class="coming-soon">IN QUEUE</span>
+				</article>
+			</section>
+			<footer class="page-footer">72 / Weakness <span>For lawful, ethical research using public information.</span></footer>
+		</main>
+	</div>
+</body>
+</html>
